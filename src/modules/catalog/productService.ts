@@ -44,3 +44,10 @@ export async function getProductById(id: string): Promise<Product | null> {
 
   return data as Product
 }
+export function getUniqueValues(products: Product[], key: keyof Product): string[] {
+  const values = products
+    .map((p) => p[key])
+    .filter((v): v is string => typeof v === 'string' && v.length > 0)
+
+  return Array.from(new Set(values)).sort()
+}

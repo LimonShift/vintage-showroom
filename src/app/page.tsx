@@ -1,7 +1,7 @@
-import ProductGrid from '@/modules/catalog/ProductGrid'
+import CatalogClient from '@/modules/catalog/CatalogClient'
 import { getAvailableProducts } from '@/modules/catalog/productService'
 
-export const revalidate = 0 // siempre fresco, sin caché
+export const revalidate = 0
 
 export default async function HomePage() {
   const products = await getAvailableProducts()
@@ -22,10 +22,10 @@ export default async function HomePage() {
 
       {/* Catálogo */}
       <section className="max-w-6xl mx-auto px-4 py-8">
-        <ProductGrid products={products} />
+        <CatalogClient products={products} />
       </section>
 
-      {/* Footer simple */}
+      {/* Footer */}
       <footer className="border-t border-gray-200 mt-16">
         <div className="max-w-6xl mx-auto px-4 py-6 text-center text-xs text-gray-400">
           © {new Date().getFullYear()} Vintage Showroom
