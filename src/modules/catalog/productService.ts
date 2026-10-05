@@ -31,6 +31,14 @@ export async function getAvailableProducts(): Promise<Product[]> {
 }
 
 export async function getProductById(id: string): Promise<Product | null> {
+  // Validación rápida de formato UUID antes de ir a Supabase
+  const uuidRegex =
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
+  if (!uuidRegex.test(id)) {
+    return null
+  }
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
