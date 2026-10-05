@@ -1,0 +1,17 @@
+Ejemplo real
+Vendes una chaqueta a 45 € a un cliente español:
+
+Stripe se queda: 1,5% × 45 € + 0,25 € = 0,925 €
+
+Tú recibes: 44,075 €
+
+Sin cuotas mensuales, sin mínimos, sin sorpresas.
+
+Costes que SÍ vas a tener (opcionales)
+Servicio	Coste
+Vercel (hosting)	Gratis hasta cierto tráfico
+Supabase	Gratis hasta 500 MB DB + 1 GB Storage
+Dominio (.com, .es)	~10-15 €/año
+Stripe	Solo % por venta
+Total fijo mensual mientras no vendas: 0 €.
+
