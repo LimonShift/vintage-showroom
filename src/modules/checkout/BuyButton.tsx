@@ -14,11 +14,13 @@ export default function BuyButton({ productId }: { productId: string }) {
         body: JSON.stringify({ productId }),
       })
       const data = await res.json()
+
       if (!res.ok) {
         alert(data.error || 'Error al procesar la compra')
         setLoading(false)
         return
       }
+
       window.location.href = data.url
     } catch (err) {
       alert('Error de conexión')
