@@ -32,27 +32,25 @@ export default function ProductFilters({
     filters.category || filters.size || filters.brand || filters.search
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 space-y-3 mb-6">
-      {/* Buscador */}
+    <div className="bg-surface border-2 border-cream/10 p-4 md:p-5 mb-8 space-y-4">
       <input
         type="text"
         value={filters.search}
         onChange={(e) => update('search', e.target.value)}
-        placeholder="Buscar por título o marca..."
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-black"
+        placeholder="BUSCAR POR TÍTULO O MARCA..."
+        className="w-full px-4 py-3 bg-black border-2 border-cream/10 rounded-none text-sm text-cream placeholder:text-cream/30 focus:outline-none focus:border-gold-500 transition-colors font-mono"
       />
 
-      {/* Filtros */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         <select
           value={filters.category}
           onChange={(e) => update('category', e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-black bg-white"
+          className="px-4 py-2.5 bg-black border-2 border-cream/10 text-sm text-cream focus:outline-none focus:border-gold-500 font-bebas tracking-wider"
         >
-          <option value="">Todas las categorías</option>
+          <option value="">TODAS LAS CATEGORÍAS</option>
           {categories.map((c) => (
             <option key={c} value={c}>
-              {c}
+              {c.toUpperCase()}
             </option>
           ))}
         </select>
@@ -60,12 +58,12 @@ export default function ProductFilters({
         <select
           value={filters.size}
           onChange={(e) => update('size', e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-black bg-white"
+          className="px-4 py-2.5 bg-black border-2 border-cream/10 text-sm text-cream focus:outline-none focus:border-gold-500 font-bebas tracking-wider"
         >
-          <option value="">Todas las tallas</option>
+          <option value="">TODAS LAS TALLAS</option>
           {sizes.map((s) => (
             <option key={s} value={s}>
-              {s}
+              {s.toUpperCase()}
             </option>
           ))}
         </select>
@@ -73,24 +71,23 @@ export default function ProductFilters({
         <select
           value={filters.brand}
           onChange={(e) => update('brand', e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-black bg-white"
+          className="px-4 py-2.5 bg-black border-2 border-cream/10 text-sm text-cream focus:outline-none focus:border-gold-500 font-bebas tracking-wider col-span-2 md:col-span-1"
         >
-          <option value="">Todas las marcas</option>
+          <option value="">TODAS LAS MARCAS</option>
           {brands.map((b) => (
             <option key={b} value={b}>
-              {b}
+              {b.toUpperCase()}
             </option>
           ))}
         </select>
       </div>
 
-      {/* Limpiar */}
       {hasFilters && (
         <button
           onClick={onClear}
-          className="text-xs text-gray-500 hover:text-black underline"
+          className="font-mono text-xs text-gold-500 hover:text-gold-400 underline"
         >
-          Limpiar filtros
+          LIMPIAR FILTROS
         </button>
       )}
     </div>

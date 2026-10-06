@@ -4,9 +4,13 @@ import type { Product } from './productService'
 export default function ProductGrid({ products }: { products: Product[] }) {
   if (products.length === 0) {
     return (
-      <div className="text-center py-16 text-gray-500">
-        <p>No hay prendas disponibles ahora mismo.</p>
-        <p className="text-sm mt-2">Vuelve pronto 👕</p>
+      <div className="text-center py-20 border-2 border-dashed border-cream/10">
+        <p className="font-bebas text-2xl tracking-widest text-cream/40">
+          NO HAY PRENDAS AHORA MISMO
+        </p>
+        <p className="font-mono text-xs text-cream/30 mt-3">
+          VUELVE PRONTO 👕
+        </p>
       </div>
     )
   }
